@@ -29,3 +29,5 @@
         --offline: load local repository
     Gradle daemon
         gradle --daemon
+    Gradle daemon
+        gradle properties
