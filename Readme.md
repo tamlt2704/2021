@@ -22,3 +22,16 @@
 run
   jar cvfm app.jar Manifest.txt *.class
   java -cp lib/log4j-1.2.17.jar:. Main java
+
+5. Using package
+  package io.code.spweb; Main
+  package io.code.spweb.model: User
+  javac -cp .:lib/log4j-1.2.17.jar io/code/spweb/Main.java
+
+  It will create .class file under each folder
+  ex: io/code/spweb/Main.class
+      io/code/spweb/model/User.class
+
+Run:
+  java -jar .:lib/log4j-1.2.17.jar io.code.spweb.Main hello
+  should expect there are messages in logexample/log.out

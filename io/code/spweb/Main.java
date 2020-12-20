@@ -1,3 +1,6 @@
+package io.code.spweb;
+
+import io.code.spweb.model.User;
 import org.apache.log4j.Logger;
 
 public class Main {
