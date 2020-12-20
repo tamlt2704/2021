@@ -35,3 +35,6 @@ run
 Run:
   java -jar .:lib/log4j-1.2.17.jar io.code.spweb.Main hello
   should expect there are messages in logexample/log.out
+
+6. Add Gradle build
+  gradle run --args hello
