@@ -2,13 +2,14 @@ package io.code.spweb;
 
 import io.code.spweb.model.User;
 import org.apache.log4j.Logger;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
 public class Main {
     static Logger log = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) {
-        User user = new User(args[0]);
-        log.info(user.getName());
-        //System.out.println(user.getName());
+        SpringApplication.run(Main.class, args);
     }
 }

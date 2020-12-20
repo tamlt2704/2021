@@ -19,9 +19,9 @@
   javac -cp .:lib/log4j-1.2.17.jar *.java
   java -cp .:lib/log4j-1.2.17.jar Main java
 
-run
-  jar cvfm app.jar Manifest.txt *.class
-  java -cp lib/log4j-1.2.17.jar:. Main java
+    run
+      jar cvfm app.jar Manifest.txt *.class
+      java -cp lib/log4j-1.2.17.jar:. Main java
 
 5. Using package
   package io.code.spweb; Main
@@ -32,9 +32,15 @@ run
   ex: io/code/spweb/Main.class
       io/code/spweb/model/User.class
 
-Run:
-  java -jar .:lib/log4j-1.2.17.jar io.code.spweb.Main hello
-  should expect there are messages in logexample/log.out
+    Run:
+      java -jar .:lib/log4j-1.2.17.jar io.code.spweb.Main hello
+      should expect there are messages in logexample/log.out
 
 6. Add Gradle build
   gradle run --args hello
+  
+7. Spring boot
+  gradle bootRun
+  curl localhost:8080
+  actuator endpoint
+  http://localhost:8080/actuator/health
