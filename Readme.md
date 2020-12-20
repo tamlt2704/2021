@@ -44,3 +44,11 @@
   curl localhost:8080
   actuator endpoint
   http://localhost:8080/actuator/health
+  
+8. User Repository
+   lombok annotation
+   User controller
+9. Data initialize
+    data-h2.sql
+    config application.properties to use h2
+    initialize sql
