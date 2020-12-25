@@ -1,0 +1,45 @@
+//https://medium.com/xebia-engineering/a-minimalistic-guide-to-building-and-deploying-monolithic-spring-boot-react-applications-39440035b27
+plugins {
+    id 'com.moowork.node' version '1.3.1'
+}
+
+apply plugin: 'java'
+apply plugin: 'com.moowork.node'
+
+repositories.whenObjectAdded {
+    if (it instanceof IvyArtifactRepository) {
+        metadataSources {
+            artifact()
+        }
+    }
+}
+
+node {
+    version = '12.9.1'
+    download = true
+}
+
+task bundle(type: NpmTask, dependsOn: npmInstall) {
+    args = ['run', 'build']
+}
+
+
+task uiTest(type: NpmTask) {
+    environment = ['CI': 'true']
+    args = ['run', 'test']
+}
+task run(type: NpmTask) {
+    args = ['start']
+}
+
+// spring boot is preconfigured to serve index.html in jar's META-INF/resources
+task webjar(type: Jar) {
+    from(fileTree('build')) {
+//        into 'META-INF/resources'
+        into '../backend/src/main/resources'
+    }
+}
+
+//check.dependsOn(test)
+//jar.dependsOn(bundle)
+//jar.finalizedBy('webjar')

@@ -52,3 +52,8 @@
     data-h2.sql
     config application.properties to use h2
     initialize sql
+10. front end and backend
+    ./gradlew :frontend:run
+    
+11. in frontend
+   npm run build && cp -r build/* ../backend/src/main/resources/static 
