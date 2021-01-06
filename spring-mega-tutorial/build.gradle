@@ -14,8 +14,22 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8' //https://stackoverflow.com/questions/56453998/lombok-builder-generated-class-in-a-gradle-module-not-found-in-other-module
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'com.h2database:h2'
+    compile 'com.github.javafaker:javafaker:1.0.2'
 }
 
 test {
     useJUnitPlatform()
+}
+
+//https://stackoverflow.com/questions/36923288/how-to-run-bootrun-with-spring-profile-via-gradle-task
+def profiles = 'dev'
+//def profiles = 'prod'
+
+bootRun {
+    args = ["--spring.profiles.active=" + profiles]
 }
