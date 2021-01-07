@@ -1,2 +1,4 @@
 rootProject.name = '2021'
-include 'jmotw', 'spring-mega-tutorial'
+include 'jmotw'
+include ':spring-mega-tutorial:app'
+include ':spring-mega-tutorial:utilities'

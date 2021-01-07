@@ -8,10 +8,13 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
+//    implementation project(":spring-mega-tutorial:utilities")
+    implementation 'io.spmegatuto.utilities:utilities:1.0-SNAPSHOT'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compileOnly 'org.projectlombok:lombok:1.18.8'

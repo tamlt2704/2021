@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+group 'io.spmegatuto.utilities'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+    implementation ('com.github.javafaker:javafaker:0.14') { exclude module: 'org.yaml' }
+    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.17'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
