@@ -34,4 +34,24 @@ public class Main {
         }
         return Math.abs(leftD - rightD);
     }
+
+    //https://www.hackerrank.com/challenges/plus-minus
+    static void plusMinus(int[] arr) {
+        double nbPlus = 0, nbMinus = 0, nbZero = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                nbPlus += 1;
+            }
+            if (arr[i] == 0) {
+                nbZero += 1;
+            }
+            if (arr[i] < 0) {
+                nbMinus += 1;
+            }
+        }
+
+        System.out.printf("%.6f\n", nbPlus / arr.length);
+        System.out.printf("%.6f\n", nbMinus / arr.length);
+        System.out.printf("%.6f\n", nbZero / arr.length);
+    }
 }
