@@ -1,4 +1,6 @@
 rootProject.name = '2021'
 include 'jmotw'
+include 'hackerank'
+include 'lpsolve_java'
 include ':spring-mega-tutorial:app'
 include ':spring-mega-tutorial:utilities'
