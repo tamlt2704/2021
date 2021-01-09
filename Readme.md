@@ -27,3 +27,9 @@
         gradle :spring-mega-tutorial:utilities:publishToMavenLocal 
         or
         gradle :spring-mega-tutorial:utilities:pTML        
+
+5. run a hkrank test
+      gralde ":hackerank:test" 
+      or       
+      cd hackerank
+      gradle clean test --tests "hkrank.MainTests.testCompareTripleTest"

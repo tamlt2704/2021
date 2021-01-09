@@ -22,4 +22,16 @@ public class Main {
         }
         return Arrays.asList(alicePoint, bobPoint);
     }
+
+    //https://www.hackerrank.com/challenges/diagonal-difference/problem
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int n = arr.get(0).size();
+        int leftD = 0;
+        int rightD = 0;
+        for (int i = 0, j = n-1; i < n; i++, j--) {
+            leftD += arr.get(i).get(i);
+            rightD += arr.get(i).get(j);
+        }
+        return Math.abs(leftD - rightD);
+    }
 }
