@@ -33,3 +33,19 @@
       or       
       cd hackerank
       gradle clean test --tests "hkrank.MainTests.testCompareTripleTest"
+      
+6. lp solve
+
+    * download *lp_solve_5.5.2.11_dev_ux64.tar.gz* and  *lp_solve_5.5_java*
+
+    * extract tar and zip file
+    
+    * copy following files to /usr/lib
+    
+        liblpsolve55.so (from lp_solve_5.5.2.11_dev_ux64.tar.gz)
+        liblpsolve55j.so (from lp_solve_5.5_java/lib/ux64)
+        liblpsolve55.so (from lp_solve_5.5_java/lib/ux64)
+    
+    * run this command
+        
+        sudo ldconfig    

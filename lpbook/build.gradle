@@ -1,0 +1,30 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    flatDir {
+        dirs '~/devtools/lp_solve_5.5'
+    }
+}
+
+dependencies {
+    implementation files("libs/lpsolve55j.jar") // use double quotes
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
+    compile group: 'io.cucumber', name: 'cucumber-core', version: '6.9.1'
+    // https://mvnrepository.com/artifact/info.cukes/cucumber-junit
+    testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.6', ext: 'pom'
+
+
+    // https://mvnrepository.com/artifact/com.datumbox/lpsolve
+    compile group: 'com.datumbox', name: 'lpsolve', version: '5.5.2.0'
+}
+
+application {
+    mainClass = 'lpbook.LpMain'
+}
