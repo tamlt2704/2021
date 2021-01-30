@@ -17,12 +17,17 @@ dependencies {
     compile group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1'
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
     compile group: 'io.cucumber', name: 'cucumber-core', version: '6.9.1'
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    compile group: 'com.google.guava', name: 'guava', version: '30.1-jre'
     // https://mvnrepository.com/artifact/info.cukes/cucumber-junit
     testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.6', ext: 'pom'
 
 
     // https://mvnrepository.com/artifact/com.datumbox/lpsolve
     compile group: 'com.datumbox', name: 'lpsolve', version: '5.5.2.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8' //https://stackoverflow.com/questions/56453998/lombok-builder-generated-class-in-a-gradle-module-not-found-in-other-module
 }
 
 application {
