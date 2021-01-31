@@ -139,4 +139,8 @@ public abstract class AbstractLpModel {
         }
         return new Result(objectiveVal, variableFactory.getVariableList());
     }
+
+    protected void setObjectiveFunction(ObjectiveFunction objectiveFunction) {
+        this.objectiveFunction = objectiveFunction;
+    }
 }
